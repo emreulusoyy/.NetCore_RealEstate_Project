@@ -1,0 +1,33 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h4>Ürün Listesi</h4>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Fiyat</th>
+        <th>Tarih</th>
+        <th>Kategori</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductID</td>
+            <td>@item.Title</td>
+            <td>@item.Price</td>
+            <td>@item.Date.ToString("dd/MMM/yyyy")</td>
+            <td>@item.Category.CategoryName</td>
+            <td><a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Product/UpdateProduct/@item.ProductID" class="btn btn-outline-success">Düzenle</a></td>
+            <td><a href="#" class="btn btn-outline-dark">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a href="/Product/AddProduct/" class="btn btn-outline-primary">Yeni İlan Girişi</a>

@@ -1,0 +1,23 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4>Yeni İlan Sayfası</h4>
+
+<form method="post">
+    <label>İlan Başlığı</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>İlan Açıklaması</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+    <label>İlan Fiyatı</label>
+    <input type="text" asp-for="Price" class="form-control" />
+    <br />
+    <label>İlan Kategorisi</label>
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-info">İlanı Ekle</button>
+</form>

@@ -1,0 +1,28 @@
+﻿@model Member
+@{
+    ViewData["Title"] = "AddMember";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<h1>Yeni Üye Formu</h1>
+
+<form method="post" style="margin-left:50px">
+    <label>Üye Adı</label>
+    <input type="text" asp-for="MemberName" class="form-control" />
+    <span asp-validation-for="MemberName" class="text-danger"></span>
+    <br />
+
+    <label>Üye Soyadı</label>
+    <input type="text" asp-for="MemberSurname" class="form-control" />
+    <span asp-validation-for="MemberSurname" class="text-danger"></span>
+    <br />
+
+    <label>Üye Mail</label>
+    <input type="text" asp-for="MemberMail" class="form-control" />
+    <br />
+
+    <label>Üye Resmi</label>
+    <input type="text" asp-for="MemberImage" class="form-control" />
+    <br />
+    <button class="btn btn-info">Üyeyi Kaydet</button>
+</form>

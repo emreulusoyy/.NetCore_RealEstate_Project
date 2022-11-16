@@ -1,0 +1,25 @@
+﻿@model List<RealEstate.EntityLayer.Concrete.Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<h1>Kategori Listesi</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kategori Adı</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CategoryID</td>
+            <td>@item.CategoryName</td>
+        </tr>
+    }
+</table>
+

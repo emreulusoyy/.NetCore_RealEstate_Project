@@ -1,0 +1,35 @@
+﻿@model RealEstate.PresentationLayer.Areas.Guest.Models.UserEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Guest/Views/_GuestLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<form method="post" enctype="multipart/form-data"> @*Dosya işlemleri yapabilmek için*@
+    <label>Kullanıcı Adı</label>
+    <input type="text" asp-for="Mail" class="form-control" />
+    <br />
+    <label>Ad</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br /> 
+    <label>Soyad</label>
+    <input type="text" asp-for="SurName" class="form-control" />
+    <br /> 
+    <label>Cinsiyet</label>
+    <input type="text" asp-for="Gender" class="form-control" />
+    <br /> 
+    <label>Telefon</label>
+    <input type="text" asp-for="PhoneNumber" class="form-control" />
+    <br />
+    <label>Şifre</label>
+    <input type="password" asp-for="Password" class="form-control" />
+    <br />
+    <div class="form form-group">
+        <label>Resim Seçin</label>
+        <input type="file" asp-for="Image" />
+        <br />
+       
+    </div>
+    <button class="btn btn-info">Verileri Güncelle</button>
+</form>

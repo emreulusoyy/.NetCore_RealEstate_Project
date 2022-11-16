@@ -1,0 +1,27 @@
+﻿@model MailRequest
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Mail Sayfası</h1>
+<br />
+<form method="post" class="form form-group">
+
+    <label>Alıcı Mail</label>
+    <input type="text" asp-for="ReciverMail" class="form-control" />
+    <br />
+
+    <label>Konu</label>
+    <input type="text" asp-for="Subject" class="form-control" />
+    <br />
+
+    <label>İçerik</label>
+    <input type="text" asp-for="Content" class="form-control" />
+    <br />
+
+    <br />
+    <button class="btn btn-outline-primary">Gönder</button>
+
+</form>
+
