@@ -319,6 +319,9 @@ namespace RealEstate.DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("AppUserID")
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
@@ -341,6 +344,8 @@ namespace RealEstate.DataAccessLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProductID");
+
+                    b.HasIndex("AppUserID");
 
                     b.HasIndex("CategoryID");
 
@@ -400,13 +405,26 @@ namespace RealEstate.DataAccessLayer.Migrations
 
             modelBuilder.Entity("RealEstate.EntityLayer.Concrete.Product", b =>
                 {
+                    b.HasOne("RealEstate.EntityLayer.Concrete.AppUser", "AppUser")
+                        .WithMany("Products")
+                        .HasForeignKey("AppUserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("RealEstate.EntityLayer.Concrete.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("AppUser");
+
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("RealEstate.EntityLayer.Concrete.AppUser", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("RealEstate.EntityLayer.Concrete.Category", b =>

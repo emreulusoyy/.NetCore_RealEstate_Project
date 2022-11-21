@@ -13,5 +13,7 @@ namespace RealEstate.EntityLayer.Concrete
         public string Surname { get; set; }
         public string Gender { get; set; }
         public string ImageUrl { get; set; }
+
+        public List<Product> Products { get; set; }
     }
 }

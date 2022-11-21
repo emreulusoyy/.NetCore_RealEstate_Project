@@ -21,5 +21,12 @@ namespace RealEstate.DataAccessLayer.EntityFramework
                 return context.Products.Include(x => x.Category).ToList();
             }
         }
+        public List<Product> GetProductByGuest(int id)
+        {
+            using (var context = new Context())
+            {
+                return context.Products.Where(x=>x.AppUserID== id).ToList();    
+            }
+        }
     }
 }

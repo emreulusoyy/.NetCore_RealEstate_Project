@@ -1,0 +1,31 @@
+﻿@model List<Product>
+
+@{
+    ViewData["Title"] = "ProductListByGuest";
+    Layout = "~/Areas/Guest/Views/_GuestLayout.cshtml";
+}
+
+<h1>Vermiş Olduğunuz İlanlar</h1>
+
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>İlan Başlığı</th>
+        <th>Fiyat</th>
+        <th>Tarih</th>
+        <th>İlanı Kaldır</th>
+        <th>İlanı Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductID</td>
+            <td>@item.Title</td>
+            <td>@item.Price</td>
+            <td>@item.Date</td>
+            <td><a href="/Guest/ProductByGuest/DeleteProductByGuest/@item.ProductID" class="btn btn-outline-danger">İlanı Kaldır</a></td>
+            <td><a href="/Guest/ProductByGuest/UpdateProductGuest/@item.ProductID" class="btn btn-outline-success">İlanı Düzenle</a></td>
+        </tr>
+    }
+</table>
+<a href="#" class="btn btn-outline-info">Yeni İlan Girişi</a>

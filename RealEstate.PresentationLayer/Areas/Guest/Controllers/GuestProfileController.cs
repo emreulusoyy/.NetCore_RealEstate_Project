@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using RealEstate.BusinessLayer.Abstract;
 using RealEstate.EntityLayer.Concrete;
 using RealEstate.PresentationLayer.Areas.Guest.Models;
 using System;
@@ -54,5 +55,13 @@ namespace RealEstate.PresentationLayer.Areas.Guest.Controllers
 
             return View();
         }
+
+        public IActionResult ProductListByGuest()
+        {
+            return View();
+        }
+
+      
+
     }
 }

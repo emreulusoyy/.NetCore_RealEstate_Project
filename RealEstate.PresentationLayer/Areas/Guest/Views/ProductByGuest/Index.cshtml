@@ -1,0 +1,28 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Guest/Views/_GuestLayout.cshtml";
+}
+
+<h1>Yeni İlan Sayfası</h1>
+<br />
+<form method="post" class="form form-group">
+
+    <label>İlan Başlığı</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+
+    <label>İlan Açıklaması</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+
+    <label>İlan Fiyatı</label>
+    <input type="text" asp-for="Price" class="form-control" />
+    <br />
+
+    <label>İlan Kategorisi</label>
+    @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.categories, new {@class = "form-control"})
+    <br />
+    <button class="btn btn-outline-primary">Yayınla</button>
+
+</form>

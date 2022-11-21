@@ -1,0 +1,37 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "UpdateProductGuest";
+    Layout = "~/Areas/Guest/Views/_GuestLayout.cshtml";
+}
+
+<h1>İlan Düzenleme Sayfası</h1>
+
+
+<form method="post">
+    <label>İlan ID</label>
+    <input type="hidden" class="form-control" asp-for="ProductID" />
+    <input type="hidden" asp-for="Date" />
+    <input type="hidden" asp-for="AppUserID" />
+    <br />
+    <label>İlan Başlığı</label>
+    <input type="text" class="form-control" asp-for="Title" />
+    <br />
+
+    <label>İlan Kategorisi</label>
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control" })
+    <br />
+
+    <label>İlan Görseli</label>
+    <input type="text" class="form-control" asp-for="Image" />
+    <br />
+
+    <label>İlan Fiyatı</label>
+    <input type="text" class="form-control" asp-for="Price" />
+    <br />
+
+    <label>İlan Açıklaması</label>
+<textarea class="form-control" asp-for="Description" rows="5"></textarea>
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+</form>
+
