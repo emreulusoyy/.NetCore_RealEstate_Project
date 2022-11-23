@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<h2>İlan İşlemleri</h2>
+<br />
+<button type="button" class="btn btn-outline-primary" id="btngetlist">Listeyi Getir</button>
+<button type="button" class="btn btn-outline-warning" id="btnaddproduct">Ürünü Ekle</button>
+<button type="button" class="btn btn-outline-info" id="btnproductdelete">Ürünü Sil</button>
+<button type="button" class="btn btn-outline-dark" id="btngetproduct">Ürünü Getir</button>
+<button type="button" class="btn btn-outline-success" id="btnupdateproduct">Ürünü Güncelle</button>
+
+<script>
+    $("#btngetlist").click(function () {
+        $.ajax({
+            contentType: "application/json",
+            dataType: "json",
+            type: "get",
+            url: "/ProductAjax/ProductList/",
+            success: function (funk1) {
+                let p = jQuery.parseJSON(funk1);
+                console.log(p);
+                let tablehtml = "<table class=table table-bordered><tr><th>İlan ID</th> <th>İlan Başlığı</th> <th> İlan Fiyatı</th></tr>";
+                $.each(p, (index, value) => {
+                    tablehtml += `<tr><td>${value.ProductID}</td><td>${value.Title}</td><td>${value.Price}</td></tr>`
+                });
+                tablehtml += "</table>";
+                $("#productlist").html(tablehtml);
+            }
+        });
+    });
+
+    $("#btnaddproduct").click(function () {
+        let values = {
+            Title: $("#txtTitle").val(),
+            Price: $("#txtPrice").val(),
+            Description: $("#txtDetails").val()
+        };
+
+        $.ajax({
+            type: "post",
+            url: "/ProductAjax/AddProduct/",
+            data: values,
+            success: function (funk2) {
+                let result = jQuery.parseJSON(funk2);
+                alert("İlan başarılı bir şekilde eklendi");
+            }
+        });
+    });
+</script>
