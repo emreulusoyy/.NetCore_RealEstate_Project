@@ -5,13 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="DIContainer\**" />
     <Compile Remove="Logging\**" />
     <Compile Remove="Messages\**" />
-    <EmbeddedResource Remove="DIContainer\**" />
     <EmbeddedResource Remove="Logging\**" />
     <EmbeddedResource Remove="Messages\**" />
-    <None Remove="DIContainer\**" />
     <None Remove="Logging\**" />
     <None Remove="Messages\**" />
   </ItemGroup>
