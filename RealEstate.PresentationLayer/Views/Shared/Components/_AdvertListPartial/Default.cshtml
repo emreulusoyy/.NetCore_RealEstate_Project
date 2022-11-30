@@ -1,0 +1,62 @@
+﻿@model List<RealEstate.EntityLayer.Concrete.Product>
+
+<section class="w3l-courses py-5" id="courses">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <h5 class="sub-title text-center">Our Cooking Classes</h5>
+        <h3 class="title-style text-center">Popular Courses</h3>
+        <div class="row justify-content-center">
+
+            @foreach (var item in Model)
+            {
+                   @* if (item.ProductMail == "Kiralık")
+                    {
+                        color= "green";
+                    }
+                    if (item.ProductMail == "Satılık")
+                    {
+                        color= "btn btn-success btn-sm";
+                    }*@
+                    
+            <div class="col-lg-4 col-md-6 item mt-5">
+                <div class="card">
+                    <div class="card-header p-0 position-relative">
+                        <a href="classes.html" class="zoom d-block">
+                            <img class="card-img-bottom d-block" style="width:340px; height:200px" src="@item.Image" alt="Card image cap">
+                        </a>
+                        <div class="post-pos">
+                            <a href="classes.html" class="receipe blue">@item.ProductMail</a>
+                            <a href="classes.html" class="receipe yellow ml-2">@item.Date</a>
+                        </div>
+                    </div>
+                    <div class="card-body course-details">
+                        <div class="price-review d-flex justify-content-between mb-1align-items-center">
+                            <p>@item.Price</p> 
+                        </div>
+                        <a href="classes.html" class="course-desc">
+                            @item.Title
+                        </a>
+                        <div class="course-meta mt-4">
+                            <div class="meta-item course-lesson">
+                                <span class="fas fa-users"></span>
+                                <span class="meta-value"> Kategori: @item.CategoryID</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        <!-- pagination -->
+        <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
+            <ul class="page-pagination">
+                <li><span aria-current="page" class="page-numbers current">1</span></li>
+                <li><a class="page-numbers" href="#url">2</a></li>
+                <li><a class="page-numbers" href="#url">3</a></li>
+                <li><a class="page-numbers" href="#url">...</a></li>
+                <li><a class="page-numbers" href="#url">15</a></li>
+                <li><a class="next" href="#url">Next <span class="fa fa-angle-right"></span></a></li>
+            </ul>
+        </div>
+        <!-- //pagination -->
+    </div>
+</section>

@@ -33,6 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Default\Data\" />
+    <Folder Include="Areas\Default\Models\" />
     <Folder Include="Areas\Guest\Data\" />
     <Folder Include="wwwroot\Image\" />
     <Folder Include="wwwroot\pdfreport\" />
