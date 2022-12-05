@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RealEstate.DataAccessLayer.Concrete;
 
 namespace RealEstate.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20221205192833_create_comment")]
+    partial class create_comment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -277,12 +279,7 @@ namespace RealEstate.DataAccessLayer.Migrations
                     b.Property<string>("NameSurname")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductID")
-                        .HasColumnType("int");
-
                     b.HasKey("CommentID");
-
-                    b.HasIndex("ProductID");
 
                     b.ToTable("Comments");
                 });
@@ -429,17 +426,6 @@ namespace RealEstate.DataAccessLayer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("RealEstate.EntityLayer.Concrete.Comment", b =>
-                {
-                    b.HasOne("RealEstate.EntityLayer.Concrete.Product", "Product")
-                        .WithMany("Comments")
-                        .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("RealEstate.EntityLayer.Concrete.Product", b =>
                 {
                     b.HasOne("RealEstate.EntityLayer.Concrete.AppUser", "AppUser")
@@ -467,11 +453,6 @@ namespace RealEstate.DataAccessLayer.Migrations
             modelBuilder.Entity("RealEstate.EntityLayer.Concrete.Category", b =>
                 {
                     b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("RealEstate.EntityLayer.Concrete.Product", b =>
-                {
-                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

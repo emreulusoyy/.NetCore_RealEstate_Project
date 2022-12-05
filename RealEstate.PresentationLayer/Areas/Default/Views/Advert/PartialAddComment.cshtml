@@ -1,0 +1,25 @@
+﻿@model Comment
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<div class="contact-right">
+    <form method="post" asp-action="PartialAddComment" asp-controller="Advert" asp-area="Default">
+
+        <div class="input-grids">
+            <input type="text" asp-for="NameSurname" id="w3lName" placeholder="Adınız Soyadınız*"
+                   class="contact-input" required="" />
+        </div>
+        <div class="form-input">
+            <textarea asp-for="Content" id="w3lMessage" placeholder="Buraya mesajınızı yazabilirsiniz*"
+                      required=""></textarea>
+        </div>
+        <div class="form-buttonhny text-lg-end">
+            <button class="btn btn-style btn-primary" id="btn1">Mesajı Gönder</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    $("#btn1").click(function(){
+        swal("Yorumunuz Alınmıştır", "Ana Sayfaya Yönlendiriliyorsunuz", "success")
+    });
+</script>
