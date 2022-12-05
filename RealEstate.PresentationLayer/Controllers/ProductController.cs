@@ -39,6 +39,7 @@ namespace RealEstate.PresentationLayer.Controllers
         [HttpPost]
         public IActionResult AddProduct(Product p)
         {
+            p.AppUserID = 3;
             p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             _productService.TInsert(p);
             return RedirectToAction("Index");

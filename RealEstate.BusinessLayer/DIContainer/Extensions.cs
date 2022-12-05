@@ -24,6 +24,8 @@ namespace RealEstate.BusinessLayer.DIContainer
 
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<IProductDal, EfProductDal>();
+
+
         }
     }
 }

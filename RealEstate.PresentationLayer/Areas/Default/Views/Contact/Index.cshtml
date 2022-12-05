@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+@await Component.InvokeAsync("_AdvertHeadPartial")
+
+<body>
+    @await Component.InvokeAsync("_AdvertHeaderPartial")
+
+    @await Component.InvokeAsync("_AdvertBannerPartial")
+
+
+    @await Html.PartialAsync("~/Areas/Default/Views/Contact/PartialSendMessage.cshtml")
+
+
+
+    @await Component.InvokeAsync("_AdvertFooterpartial")
+
+    @await Component.InvokeAsync("_AdvertScriptPartial")
+
+
+</body>
+
+</html>

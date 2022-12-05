@@ -1,9 +1,11 @@
-﻿@model List<RealEstate.EntityLayer.Concrete.Product>
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<RealEstate.EntityLayer.Concrete.Product>
 
 <section class="w3l-courses py-5" id="courses">
     <div class="container py-lg-5 py-md-4 py-2">
-        <h5 class="sub-title text-center">Our Cooking Classes</h5>
-        <h3 class="title-style text-center">Popular Courses</h3>
+        <h5 class="sub-title text-center">Tüm İlan Listemiz</h5>
+        <h3 class="title-style text-center">Popüler İlanlar</h3>
         <div class="row justify-content-center">
 
             @foreach (var item in Model)
@@ -25,7 +27,7 @@
                         </a>
                         <div class="post-pos">
                             <a href="classes.html" class="receipe blue">@item.ProductMail</a>
-                            <a href="classes.html" class="receipe yellow ml-2">@item.Date</a>
+                                <a href="classes.html" class="receipe yellow ml-2">@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</a>
                         </div>
                     </div>
                     <div class="card-body course-details">
@@ -47,16 +49,8 @@
             }
         </div>
         <!-- pagination -->
-        <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
-            <ul class="page-pagination">
-                <li><span aria-current="page" class="page-numbers current">1</span></li>
-                <li><a class="page-numbers" href="#url">2</a></li>
-                <li><a class="page-numbers" href="#url">3</a></li>
-                <li><a class="page-numbers" href="#url">...</a></li>
-                <li><a class="page-numbers" href="#url">15</a></li>
-                <li><a class="next" href="#url">Next <span class="fa fa-angle-right"></span></a></li>
-            </ul>
-        </div>
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
         <!-- //pagination -->
     </div>
 </section>
+
