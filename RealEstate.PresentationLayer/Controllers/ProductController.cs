@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using RealEstate.BusinessLayer.Abstract;
 using RealEstate.EntityLayer.Concrete;
@@ -13,10 +14,12 @@ namespace RealEstate.PresentationLayer.Controllers
     {
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
-        public ProductController(IProductService productService, ICategoryService categoryService)
+        private readonly UserManager<AppUser> _usermanager;
+        public ProductController(IProductService productService, ICategoryService categoryService, UserManager<AppUser> usermanager)
         {
             _productService = productService;
             _categoryService = categoryService;
+            _usermanager = usermanager;
         }
 
         public IActionResult Index()
@@ -37,9 +40,10 @@ namespace RealEstate.PresentationLayer.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddProduct(Product p)
+        public async Task<IActionResult> AddProduct(Product p)
         {
-            p.AppUserID = 3;
+            var values = await _usermanager.FindByNameAsync(User.Identity.Name);
+            p.AppUserID = values.Id;
             p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             _productService.TInsert(p);
             return RedirectToAction("Index");

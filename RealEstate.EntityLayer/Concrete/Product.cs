@@ -25,5 +25,7 @@ namespace RealEstate.EntityLayer.Concrete
         public AppUser AppUser { get; set; }
 
         public List<Comment> Comments { get; set; }
+
+     
     }
 }

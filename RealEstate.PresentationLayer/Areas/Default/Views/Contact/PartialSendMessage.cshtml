@@ -1,5 +1,8 @@
 ﻿@model Contact
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <section class="w3l-contact-2 py-5" id="contact">
     <div class="container py-lg-5 py-md-4 py-2">
         <div class="w3l-header-sec text-center mb-md-5 mb-4">
@@ -11,7 +14,7 @@
                 <img src="~/Cooking-Starter/assets/images/contact.jpg" class="img-fluid radius-image" alt="">
             </div>
             <div class="contact-right">
-                <form method="post" class="signin-form">
+                <form method="post" asp-action="PartialSendMessage" asp-area="Default" asp-controller="Contact">
                     <div class="input-grids">
                         <input type="text" asp-for="ContactNameSurname" id="w3lName" placeholder="Adınız Soyadınız*"
                                class="contact-input" required="" />
@@ -25,7 +28,7 @@
                                   required=""></textarea>
                     </div>
                     <div class="form-buttonhny text-lg-end">
-                        <button class="btn btn-style btn-primary">Mesajı Gönder</button>
+                        <button class="btn btn-style btn-primary" id="btn1">Mesajı Gönder</button>
                     </div>
                 </form>
             </div>
@@ -37,3 +40,9 @@
 
     </div>
 </section>
+
+<script>
+    $("#btn1").click(function () {
+        swal("Mesajınız Alınmıştır!", "Sayfaya Yeniden Yönlendiriliyorsunuz!", "success");
+    });
+</script>

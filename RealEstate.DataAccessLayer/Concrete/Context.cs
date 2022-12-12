@@ -22,5 +22,6 @@ namespace RealEstate.DataAccessLayer.Concrete
         public DbSet<About> Abouts { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Comment> Comments { get; set; }
+       
     }
 }

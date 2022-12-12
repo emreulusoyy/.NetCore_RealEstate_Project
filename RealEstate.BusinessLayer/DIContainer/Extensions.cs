@@ -25,7 +25,13 @@ namespace RealEstate.BusinessLayer.DIContainer
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<IProductDal, EfProductDal>();
 
+            services.AddScoped<IContactService, ContactManager>();
+            services.AddScoped<IContactDal, EfContactDal>();
 
+            services.AddScoped<IUserService, UserManager>();
+            services.AddScoped<IUserDal, EfUserDal>();
+
+            
         }
     }
 }

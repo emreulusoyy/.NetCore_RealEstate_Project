@@ -1,0 +1,14 @@
+﻿@model RealEstate.EntityLayer.Concrete.AppRole
+@{
+    ViewData["Title"] = "AddRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Rol Ekleme Sayfası</h1>
+
+<form method="post">
+    <label>Rol Adını Giriniz</label>
+    <input type="text" class="form-control" asp-for="Name" />
+    <br />
+    <button class="btn btn-primary">Rolü Ekle</button>
+</form>
