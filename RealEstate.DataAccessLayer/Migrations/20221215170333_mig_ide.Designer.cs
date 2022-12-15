@@ -10,8 +10,8 @@ using RealEstate.DataAccessLayer.Concrete;
 namespace RealEstate.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20221207185055_mig_users")]
-    partial class mig_users
+    [Migration("20221215170333_mig_ide")]
+    partial class mig_ide
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -371,41 +371,13 @@ namespace RealEstate.DataAccessLayer.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UsersName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("ProductID");
 
                     b.HasIndex("AppUserID");
 
                     b.HasIndex("CategoryID");
 
-                    b.HasIndex("UsersName");
-
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("RealEstate.EntityLayer.Concrete.User", b =>
-                {
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Gender")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Surname")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Name");
-
-                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -484,17 +456,9 @@ namespace RealEstate.DataAccessLayer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("RealEstate.EntityLayer.Concrete.User", "Users")
-                        .WithMany("Products")
-                        .HasForeignKey("UsersName")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("AppUser");
 
                     b.Navigation("Category");
-
-                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("RealEstate.EntityLayer.Concrete.AppUser", b =>
@@ -510,11 +474,6 @@ namespace RealEstate.DataAccessLayer.Migrations
             modelBuilder.Entity("RealEstate.EntityLayer.Concrete.Product", b =>
                 {
                     b.Navigation("Comments");
-                });
-
-            modelBuilder.Entity("RealEstate.EntityLayer.Concrete.User", b =>
-                {
-                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

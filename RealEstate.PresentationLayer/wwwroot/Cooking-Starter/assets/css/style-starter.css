@@ -20187,14 +20187,10 @@ ul.admin-post li a:hover {
 
 /* inner banner */
 .inner-banner {
-  background: url(../images/bg2.jpg) no-repeat center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -ms-background-size: cover;
-  position: relative;
-  z-index: 1;
+    background: url(/Cooking-Starter/assets/images/foto.jpg) no-repeat center;
+    background-size: cover;
+    
+    
 }
 
 .inner-banner::before {

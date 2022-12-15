@@ -1,0 +1,25 @@
+﻿@model RealEstate.EntityLayer.Concrete.AppUser
+@{
+    ViewData["Title"] = "EditUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Kullanıcı Düzenleme Sayfası</h1>
+
+<form method="post">
+    <label>Ad</label>
+    <input type="text" class="form-control" asp-for="Name" />
+    <br />
+    <label>Soyad</label>
+    <input type="text" class="form-control" asp-for="Surname" />
+    <br />
+    <label>Kullanıcı Adı</label>
+    <input type="text" class="form-control" asp-for="UserName" />
+    <br />
+    <label>Cinsiyet</label>
+    <input type="text" class="form-control" asp-for="Gender" />
+    <br />
+    
+    <button class="btn btn-success">Kullanıcıyı Güncelle</button>
+</form>
+

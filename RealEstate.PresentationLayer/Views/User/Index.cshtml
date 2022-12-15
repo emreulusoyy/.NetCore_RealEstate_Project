@@ -23,7 +23,7 @@
             <td>@item.Name</td>
             <td>@item.Surname</td>
             <td>@item.UserName</td>
-            @if(item.Gender=="erkek")
+            @if(item.Gender=="Erkek")
             {
                 <td><span style="background-color:aqua">Erkek</span></td>
             }
@@ -33,7 +33,7 @@
 
             }
             <td><a href="/User/DeleteUser/@item.Id" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="/User/UpdateProduct/@item.Id" class="btn btn-outline-success">Düzenle</a></td>
+            <td><a href="/User/EditUser/@item.Id" class="btn btn-outline-success">Düzenle</a></td>
         </tr>
     }
 </table>

@@ -2,34 +2,84 @@
 @{
     Layout = null;
 }
-<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-<div class="container">
-    <form method="post">
-        <label>Adınız</label>
-        <input type="text" asp-for="name" class="form-control" />
-        <span asp-validation-for="name" class="text-danger"></span>
-        <br />
-        <label>Soyadınız</label>
-        <input type="text" asp-for="surname" class="form-control" />
-        <span asp-validation-for="surname" class="text-danger"></span>
-        <br />
-        <label>Mail Adresiniz</label>
-        <input type="text" asp-for="mail" class="form-control" />
-        <span asp-validation-for="mail" class="text-danger"></span>
-        <br />
-        <label>Kullanıcı Adınız</label>
-        <input type="text" asp-for="username" class="form-control" />
-        <span asp-validation-for="username" class="text-danger"></span>
-        <br />
-        <label>Şifreniz</label>
-        <input type="text" asp-for="password" class="form-control" />
-        <span asp-validation-for="password" class="text-danger"></span>
-        <br />
-        <label>Şifre Tekrar</label>
-        <input type="text" asp-for="confirmpassword" class="form-control" />
-        <span asp-validation-for="confirmpassword" class="text-danger"></span>
-        <br />
-        <div asp-validation-summary="ModelOnly"></div>
-        <button class="btn btn-outline-dark">Kullanıcı Kaydet</button>
-    </form>
-</div>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Emlak Kayıt Formu</title>
+	<!-- Meta-Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Estate Register Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta-Tags -->
+	<!-- css files -->
+	<link href="/web/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- //css files -->
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900" rel="stylesheet">
+	<!-- //google fonts -->
+
+</head>
+<body>
+
+	<div class="signupform">
+		<h1>Emlak Kayıt Formu</h1>
+		<div class="container">
+			<!-- main content -->
+			<div class="agile_info">
+				<div class="w3l_form">
+					<div class="left_grid_info">
+						<img src="/web/images/left.png" alt="" />
+					</div>
+				</div>
+				<div class="w3_info">
+					<h2>Giriş için Kaydolun</h2>
+					<p>Seni aramızda görmeyi çok isteriz.</p>
+					<form action="#" method="post">
+						<div class="input-group">
+							<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" placeholder="Adınız" required="" asp-for="name" >
+						</div>
+						<div class="input-group">
+							<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" placeholder="Soyadınız" required="" asp-for="surname">
+						</div>
+						<div class="input-group">
+							<span><i class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" placeholder="Kullanıcı Adınız" required="" asp-for="username">
+						</div>
+						<div class="input-group">
+							<span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+							<input type="email" placeholder="Email" required="" asp-for="mail">
+						</div>
+						<div class="input-group">
+							<span><i class="fa fa-lock" aria-hidden="true"></i></span>
+							<input type="Password" placeholder="Şifre" required="" asp-for="password">
+						</div>
+						<div class="input-group">
+							<span><i class="fa fa-lock" aria-hidden="true"></i></span>
+							<input type="Password" placeholder="Şifre Tekrar" required="" asp-for="confirmpassword">
+						</div>
+						<button class="btn btn-danger btn-block" type="submit">Kayıt Ol</button>
+					</form>
+					<p class="account">Bir hesabın var mı? <a href="/Login/Index/">Giriş Yap</a></p>
+				</div>
+			</div>
+			<!-- //main content -->
+		</div>
+		
+	</div>
+
+</body>
+</html>
