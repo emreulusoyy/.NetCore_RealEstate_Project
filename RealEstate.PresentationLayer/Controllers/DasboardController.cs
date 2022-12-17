@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RealEstate.BusinessLayer.Concrete;
@@ -8,7 +9,8 @@ using RealEstate.EntityLayer.Concrete;
 
 namespace RealEstate.PresentationLayer.Controllers
 {
-	public class DasboardController : Controller
+    [AllowAnonymous]
+    public class DasboardController : Controller
 	{
 		PersonalManager pm = new PersonalManager(new EfPersonalDal());	
 

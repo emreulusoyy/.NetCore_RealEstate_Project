@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/template/css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/template/images/favicon.png" />
+    <link rel="stylesheet" href="~/majestic-master/vendors/mdi/css/materialdesignicons.min.css">
+    <link href="~/majestic-master/majestic-master/vendors/mdi/css/materialdesignicons.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -27,7 +29,7 @@
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="navbar-brand-wrapper d-flex justify-content-center">
                 <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-                    <a class="navbar-brand brand-logo" href="../../index.html"><img src="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/template/images/logo.svg" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo" href="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/index.html"><img src="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/template/images/logo.svg" alt="logo" /></a>
                     <a class="navbar-brand brand-logo-mini" href="/MajesticAdmin-Free-Bootstrap-Admin-Template-master/index.html"><img src="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/template/images/logo-mini.svg" alt="logo" /></a>
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                         <span class="mdi mdi-sort-variant"></span>
@@ -54,43 +56,18 @@
                             <span class="count"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
-                            <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+                            <p class="mb-0 font-weight-normal float-left dropdown-header">Mesajlar</p>
+                           
                             <a class="dropdown-item">
                                 <div class="item-thumbnail">
-                                    <img src="/MajesticAdmin-Free-Bootstrap-Admin-Template-master/images/faces/face4.jpg" alt="image" class="profile-pic">
+                                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/face-icon.png" alt="image" class="profile-pic">
                                 </div>
                                 <div class="item-content flex-grow">
                                     <h6 class="ellipsis font-weight-normal">
-                                        David Grey
+                                        Emre Ulusoy
                                     </h6>
                                     <p class="font-weight-light small-text text-muted mb-0">
-                                        The meeting is cancelled
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item">
-                                <div class="item-thumbnail">
-                                    <img src="../../images/faces/face2.jpg" alt="image" class="profile-pic">
-                                </div>
-                                <div class="item-content flex-grow">
-                                    <h6 class="ellipsis font-weight-normal">
-                                        Tim Cook
-                                    </h6>
-                                    <p class="font-weight-light small-text text-muted mb-0">
-                                        New product launch
-                                    </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item">
-                                <div class="item-thumbnail">
-                                    <img src="../../images/faces/face3.jpg" alt="image" class="profile-pic">
-                                </div>
-                                <div class="item-content flex-grow">
-                                    <h6 class="ellipsis font-weight-normal">
-                                        Johnson
-                                    </h6>
-                                    <p class="font-weight-light small-text text-muted mb-0">
-                                        Upcoming board meeting
+                                        
                                     </p>
                                 </div>
                             </a>
@@ -106,14 +83,8 @@
                             <a class="dropdown-item">
                                 <div class="item-thumbnail">
                                     <div class="item-icon bg-success">
-                                        <i class="mdi mdi-information mx-0"></i>
+                                        <i class="mdi accordion-item mx-0"></i>
                                     </div>
-                                </div>
-                                <div class="item-content">
-                                    <h6 class="font-weight-normal">Application Error</h6>
-                                    <p class="font-weight-light small-text mb-0 text-muted">
-                                        Just now
-                                    </p>
                                 </div>
                             </a>
                             <a class="dropdown-item">
@@ -123,9 +94,9 @@
                                     </div>
                                 </div>
                                 <div class="item-content">
-                                    <h6 class="font-weight-normal">Settings</h6>
+                                    <h6 class="font-weight-normal">Ayarlar</h6>
                                     <p class="font-weight-light small-text mb-0 text-muted">
-                                        Private message
+                                        Mesajlar
                                     </p>
                                 </div>
                             </a>
@@ -146,8 +117,8 @@
                     </li>
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-                            <img src="../../images/faces/face5.jpg" alt="profile" />
-                            <span class="nav-profile-name">Louis Barnett</span>
+                            <img src="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/images/faces/face5.jpg" alt="profile" />
+                            <span class="nav-profile-name">Emre Ulusoy</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                             <a class="dropdown-item">
@@ -172,70 +143,58 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../index.html">
-                            <i class="mdi mdi-home menu-icon"></i>
+                        <a class="nav-link" href="/Dasboard/Index/">
+                            <i class="mdi mdi-home "></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="/Product/Index" aria-expanded="false" aria-controls="ui-basic">
-                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                        <a class="nav-link"  href="/Product/Index/" >
+                            <i class="mdi mdi-checkbox-multiple-marked"></i>
                             <span class="menu-title">İlanlar</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/User/Index/">
-                            <i class="mdi mdi-view-headline menu-icon"></i>
+                            <i class="mdi mdi-account-multiple"></i>
                             <span class="menu-title">Kullanıcılar</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../pages/charts/chartjs.html">
-                            <i class="mdi mdi-chart-pie menu-icon"></i>
-                            <span class="menu-title">Grafikler</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../pages/tables/basic-table.html">
-                            <i class="mdi mdi-grid-large menu-icon"></i>
-                            <span class="menu-title">Mesajlar</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../pages/icons/mdi.html">
-                            <i class="mdi mdi-emoticon menu-icon"></i>
+                        <a class="nav-link" href="/Role/Index/">
+                            <i class="mdi mdi-account-card-details"></i>
                             <span class="menu-title">Roller</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                            <i class="mdi mdi-account menu-icon"></i>
-                            <span class="menu-title">Dosya İşlemleri</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../documentation/documentation.html">
+                        <a class="nav-link" href="/Member/Index/">
                             <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Şifre İşlemleri</span>
+                            <span class="menu-title">Üye İşlemleri</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../documentation/documentation.html">
+                        <a class="nav-link" href="/Mail/Index/">
                             <i class="mdi mdi-file-document-box-outline menu-icon"></i>
                             <span class="menu-title">Mail Gönder</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../documentation/documentation.html">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-                            <span class="menu-title">Yorumlar</span>
+                        <a class="nav-link" href="/Report/Index/">
+                            <i class="mdi mdi-book-open-variant"></i>
+                            <span class="menu-title">Dosya İşlemleri</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Areas/Default/Advert/Index/">
+                            <i class="mdi mdi-crown"></i>
+                            <span class="menu-title">Siteye Git</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../../documentation/documentation.html">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+                            <i class="mdi mdi-logout"></i>
                             <span class="menu-title">Çıkış Yap</span>
                         </a>
                     </li>
@@ -271,20 +230,8 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/template/vendors/base/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
-@*    <script src="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/template/js/off-canvas.js"></script>
-*@    <script src="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/template/js/hoverable-collapse.js"></script>
-    <script src="~/MajesticAdmin-Free-Bootstrap-Admin-Template-master/template/js/template.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
-    <script src="~/majesticadmin-free-bootstrap-admin-template-master/template/js/chart.min.js"></script>
-    <script src="~/majesticadmin-free-bootstrap-admin-template-master/template/js/chart.js"></script>
-    <script src="~/majesticadmin-free-bootstrap-admin-template-master/template/js/dashboard.js"></script>
+   
+  
 </body>
 
 </html>

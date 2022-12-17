@@ -20193,16 +20193,17 @@ ul.admin-post li a:hover {
     
 }
 
-.inner-banner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--layer);
-  z-index: -1;
-  left: 0;
-}
+    .inner-banner::before {
+        content: "";
+        background: url(/Cooking-Starter/assets/images/foto.jpg) no-repeat center;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--layer);
+        z-index: -1;
+        left: 0;
+    }
 
 .w3l-breadcrumb {
   text-align: center;
